@@ -1866,3 +1866,24 @@ a:hover {
   body { background: white; color: black; }
   .site-nav, canvas, .back-to-top-btn, .toast-msg { display: none; }
 }
+
+/* ==========================================================================
+   INLINE SVG AVATAR
+   ========================================================================== */
+.avatar-inline {
+  width: 100%;
+  display: block;
+  line-height: 0;
+  background: linear-gradient(135deg, #1a1714, #2b2520);
+}
+
+.avatar-inline svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform var(--transition-smooth);
+}
+
+.portrait-frame:hover .avatar-inline svg {
+  transform: scale(1.03);
+}

@@ -141,8 +141,105 @@
           <!-- Character Visual Portrait Card -->
           <div class="character-visual-card">
             <div class="portrait-frame manga-panel">
-              <!-- SVG Avatar – replace with your photo: assets/your-photo.jpg -->
-              <img src="assets/avatar.svg" alt="Tanushree C R – Developer Avatar" class="portrait-img">
+              <!-- Inline SVG Avatar — always renders, no file dependency -->
+              <!-- To use your own photo: replace this entire div with <img src="assets/your-photo.jpg" class="portrait-img" alt="Tanushree C R"> -->
+              <div class="avatar-inline">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="100%" height="100%">
+                  <defs>
+                    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#1a1714"/>
+                      <stop offset="100%" style="stop-color:#2b2520"/>
+                    </linearGradient>
+                    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#d5c4a1"/>
+                      <stop offset="100%" style="stop-color:#fabd2f"/>
+                    </linearGradient>
+                    <radialGradient id="glowGrad" cx="50%" cy="38%" r="45%">
+                      <stop offset="0%" style="stop-color:rgba(250,189,47,0.18)"/>
+                      <stop offset="100%" style="stop-color:rgba(14,12,10,0)"/>
+                    </radialGradient>
+                    <filter id="softGlow">
+                      <feGaussianBlur stdDeviation="3" result="blur"/>
+                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
+                    <clipPath id="circleClip">
+                      <circle cx="200" cy="168" r="85"/>
+                    </clipPath>
+                  </defs>
+
+                  <!-- Background -->
+                  <rect width="400" height="440" fill="url(#bgGrad)"/>
+
+                  <!-- Halftone dot pattern -->
+                  <g opacity="0.055" fill="#d5c4a1">
+                    <circle cx="32" cy="32" r="2"/><circle cx="72" cy="32" r="2"/><circle cx="112" cy="32" r="2"/>
+                    <circle cx="152" cy="32" r="2"/><circle cx="192" cy="32" r="2"/><circle cx="232" cy="32" r="2"/>
+                    <circle cx="272" cy="32" r="2"/><circle cx="312" cy="32" r="2"/><circle cx="352" cy="32" r="2"/>
+                    <circle cx="32" cy="72" r="2"/><circle cx="72" cy="72" r="2"/><circle cx="352" cy="72" r="2"/>
+                    <circle cx="32" cy="400" r="2"/><circle cx="72" cy="400" r="2"/><circle cx="112" cy="400" r="2"/>
+                    <circle cx="152" cy="400" r="2"/><circle cx="192" cy="400" r="2"/><circle cx="232" cy="400" r="2"/>
+                    <circle cx="272" cy="400" r="2"/><circle cx="312" cy="400" r="2"/><circle cx="352" cy="400" r="2"/>
+                  </g>
+
+                  <!-- Ambient glow -->
+                  <ellipse cx="200" cy="160" rx="180" ry="160" fill="url(#glowGrad)"/>
+
+                  <!-- Decorative outer ring -->
+                  <circle cx="200" cy="168" r="105" fill="none" stroke="url(#accentGrad)" stroke-width="1.5" opacity="0.35" stroke-dasharray="8 4"/>
+
+                  <!-- Avatar circle background -->
+                  <circle cx="200" cy="168" r="88" fill="#221e1a" stroke="url(#accentGrad)" stroke-width="2.5" filter="url(#softGlow)"/>
+
+                  <!-- Head -->
+                  <circle cx="200" cy="142" r="30" fill="#d5c4a1" clip-path="url(#circleClip)"/>
+
+                  <!-- Neck -->
+                  <rect x="191" y="168" width="18" height="16" rx="4" fill="#d5c4a1" clip-path="url(#circleClip)"/>
+
+                  <!-- Shoulders / body -->
+                  <path d="M148 253 Q148 210 200 210 Q252 210 252 253 L252 260 L148 260 Z" fill="#d5c4a1" clip-path="url(#circleClip)"/>
+
+                  <!-- Hair strands (anime style) -->
+                  <path d="M174 118 Q172 100 185 95 Q200 90 215 95 Q228 100 226 118" fill="#8a7560" clip-path="url(#circleClip)"/>
+                  <path d="M174 118 Q168 108 170 125" fill="#8a7560" clip-path="url(#circleClip)"/>
+                  <path d="M226 118 Q232 108 230 125" fill="#8a7560" clip-path="url(#circleClip)"/>
+
+                  <!-- Eyes -->
+                  <ellipse cx="188" cy="145" rx="6" ry="7" fill="#2b2520"/>
+                  <ellipse cx="212" cy="145" rx="6" ry="7" fill="#2b2520"/>
+                  <ellipse cx="189" cy="143" rx="2" ry="2.5" fill="#d5c4a1" opacity="0.6"/>
+                  <ellipse cx="213" cy="143" rx="2" ry="2.5" fill="#d5c4a1" opacity="0.6"/>
+
+                  <!-- Smile -->
+                  <path d="M190 158 Q200 165 210 158" stroke="#8a7560" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+                  <!-- Code brackets decoration -->
+                  <text x="82" y="195" font-family="monospace" font-size="38" fill="#fabd2f" opacity="0.5">&lt;</text>
+                  <text x="288" y="195" font-family="monospace" font-size="38" fill="#fabd2f" opacity="0.5">/&gt;</text>
+
+                  <!-- Separator line -->
+                  <line x1="40" y1="300" x2="360" y2="300" stroke="#d5c4a1" stroke-width="0.5" opacity="0.2"/>
+
+                  <!-- Name text -->
+                  <text x="200" y="332" text-anchor="middle" font-family="Georgia, serif" font-size="20" font-weight="700" fill="#fbf1c7" letter-spacing="2.5">TANUSHREE C R</text>
+
+                  <!-- Role text -->
+                  <text x="200" y="356" text-anchor="middle" font-family="'Courier New', monospace" font-size="10.5" fill="#d5c4a1" letter-spacing="2.5">MCA STUDENT • AI/ML</text>
+
+                  <!-- Japanese text -->
+                  <text x="200" y="386" text-anchor="middle" font-family="serif" font-size="16" fill="#fabd2f" opacity="0.45">開発者</text>
+
+                  <!-- Corner bracket decorations -->
+                  <path d="M24 24 L24 52 M24 24 L52 24" stroke="#d5c4a1" stroke-width="1.5" opacity="0.4" fill="none" stroke-linecap="round"/>
+                  <path d="M376 24 L376 52 M376 24 L348 24" stroke="#d5c4a1" stroke-width="1.5" opacity="0.4" fill="none" stroke-linecap="round"/>
+                  <path d="M24 416 L24 388 M24 416 L52 416" stroke="#d5c4a1" stroke-width="1.5" opacity="0.4" fill="none" stroke-linecap="round"/>
+                  <path d="M376 416 L376 388 M376 416 L348 416" stroke="#d5c4a1" stroke-width="1.5" opacity="0.4" fill="none" stroke-linecap="round"/>
+
+                  <!-- Top status bar -->
+                  <rect x="24" y="16" width="120" height="1" fill="#d5c4a1" opacity="0.15"/>
+                  <rect x="256" y="16" width="120" height="1" fill="#d5c4a1" opacity="0.15"/>
+                </svg>
+              </div>
               
               <div class="portrait-overlay-hud">
                 <div class="hud-status-live">
