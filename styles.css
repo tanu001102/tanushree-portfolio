@@ -1,6 +1,8 @@
 /* ==========================================================================
    TANUSHREE C R // DARK ANIME & LO-FI COFFEE PORTFOLIO DESIGN SYSTEM
    Theme: Nocturnal Espresso (#141210, #1a1714) x Warm Sand & Beige (#d5c4a1, #ebdbb2)
+   Version: 1.0 | Built: 2026
+   Fonts: Cinzel · Space Grotesk · Plus Jakarta Sans · JetBrains Mono
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=JetBrains+Mono:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap');
@@ -1765,4 +1767,102 @@ a:hover {
   .brand-name .subtitle {
     display: none;
   }
+}
+
+
+/* ==========================================================================
+   ADDITIONAL POLISH & FINAL TWEAKS
+   ========================================================================== */
+
+/* Portrait image with SVG avatar */
+.portrait-frame .portrait-img {
+  width: 100%;
+  height: auto;
+  min-height: 320px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-smooth);
+  background: var(--bg-surface);
+}
+
+.portrait-frame:hover .portrait-img {
+  transform: scale(1.03);
+}
+
+/* Timeline card hover effect */
+.timeline-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-panel), 0 0 20px rgba(213, 196, 161, 0.1);
+}
+
+/* Skill chip stagger-in animation */
+@keyframes chipFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.skill-box.revealed .skill-chip {
+  animation: chipFadeIn 0.4s ease both;
+}
+
+/* Pulsing glow on glowing timeline nodes */
+@keyframes nodeGlow {
+  0%, 100% { box-shadow: 0 0 10px var(--accent-gold), 0 0 20px rgba(250,189,47,0.2); }
+  50%       { box-shadow: 0 0 20px var(--accent-gold), 0 0 40px rgba(250,189,47,0.4); }
+}
+.timeline-node.glow-node {
+  animation: nodeGlow 2.5s infinite ease-in-out;
+}
+
+/* Cert card icon glow on hover */
+.cert-card:hover i {
+  filter: drop-shadow(0 0 8px var(--accent-gold));
+}
+
+/* Info pill subtle entrance */
+.info-pill {
+  cursor: default;
+}
+
+/* Footer tagline style */
+.footer-tagline {
+  font-style: italic;
+  opacity: 0.75;
+}
+
+/* Contact button group spacing */
+.contact-btn-group a,
+.contact-btn-group button {
+  text-align: center;
+}
+
+/* Form note icon */
+.form-note i {
+  margin-right: 4px;
+  color: var(--accent-muted);
+}
+
+/* About section 2-col responsive adjust */
+@media (max-width: 600px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .certifications-grid {
+    gap: 8px;
+  }
+  .cert-card {
+    padding: 10px 14px;
+  }
+  .manga-grid {
+    gap: 16px;
+  }
+  .modal-content {
+    padding: 20px;
+  }
+}
+
+/* Print-friendly resume download hint */
+@media print {
+  body { background: white; color: black; }
+  .site-nav, canvas, .back-to-top-btn, .toast-msg { display: none; }
 }

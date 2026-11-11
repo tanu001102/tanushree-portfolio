@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1714"/>
+      <stop offset="100%" style="stop-color:#221e1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#d5c4a1"/>
+      <stop offset="100%" style="stop-color:#fabd2f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(250,189,47,0.15)"/>
+      <stop offset="100%" style="stop-color:rgba(26,23,20,0)"/>
+    </radialGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#fabd2f" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="400" fill="url(#bg)"/>
+  
+  <!-- Ambient glow -->
+  <circle cx="200" cy="160" r="180" fill="url(#glow)"/>
+  
+  <!-- Decorative dots pattern -->
+  <g opacity="0.06" fill="#d5c4a1">
+    <circle cx="40" cy="40" r="2"/><circle cx="80" cy="40" r="2"/><circle cx="120" cy="40" r="2"/>
+    <circle cx="160" cy="40" r="2"/><circle cx="200" cy="40" r="2"/><circle cx="240" cy="40" r="2"/>
+    <circle cx="280" cy="40" r="2"/><circle cx="320" cy="40" r="2"/><circle cx="360" cy="40" r="2"/>
+    <circle cx="40" cy="80" r="2"/><circle cx="80" cy="80" r="2"/><circle cx="120" cy="80" r="2"/>
+    <circle cx="160" cy="80" r="2"/><circle cx="200" cy="80" r="2"/><circle cx="240" cy="80" r="2"/>
+    <circle cx="280" cy="80" r="2"/><circle cx="320" cy="80" r="2"/><circle cx="360" cy="80" r="2"/>
+    <circle cx="40" cy="360" r="2"/><circle cx="80" cy="360" r="2"/><circle cx="120" cy="360" r="2"/>
+    <circle cx="160" cy="360" r="2"/><circle cx="200" cy="360" r="2"/><circle cx="240" cy="360" r="2"/>
+    <circle cx="280" cy="360" r="2"/><circle cx="320" cy="360" r="2"/><circle cx="360" cy="360" r="2"/>
+  </g>
+
+  <!-- Outer ring -->
+  <circle cx="200" cy="175" r="95" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.4" filter="url(#shadow)"/>
+  
+  <!-- Avatar circle -->
+  <circle cx="200" cy="175" r="80" fill="#2b2520" stroke="#d5c4a1" stroke-width="3"/>
+  
+  <!-- Person silhouette - head -->
+  <circle cx="200" cy="150" r="28" fill="#d5c4a1"/>
+  
+  <!-- Person silhouette - body -->
+  <path d="M155 215 Q155 185 200 185 Q245 185 245 215 L245 220 L155 220 Z" fill="#d5c4a1"/>
+  
+  <!-- Code brackets decoration -->
+  <text x="95" y="185" font-family="monospace" font-size="40" fill="#fabd2f" opacity="0.6">&lt;</text>
+  <text x="280" y="185" font-family="monospace" font-size="40" fill="#fabd2f" opacity="0.6">/&gt;</text>
+  
+  <!-- Name -->
+  <text x="200" y="300" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="22" font-weight="700" fill="#fbf1c7" letter-spacing="2">TANUSHREE C R</text>
+  
+  <!-- Role -->
+  <text x="200" y="328" text-anchor="middle" font-family="'Segoe UI', sans-serif" font-size="11" fill="#d5c4a1" letter-spacing="3">MCA STUDENT • AI/ML DEVELOPER</text>
+  
+  <!-- Japanese decoration -->
+  <text x="200" y="358" text-anchor="middle" font-family="serif" font-size="14" fill="#d5c4a1" opacity="0.4">開発者</text>
+
+  <!-- Corner brackets -->
+  <path d="M30 30 L30 60 M30 30 L60 30" stroke="#d5c4a1" stroke-width="2" opacity="0.3" fill="none"/>
+  <path d="M370 30 L370 60 M370 30 L340 30" stroke="#d5c4a1" stroke-width="2" opacity="0.3" fill="none"/>
+  <path d="M30 370 L30 340 M30 370 L60 370" stroke="#d5c4a1" stroke-width="2" opacity="0.3" fill="none"/>
+  <path d="M370 370 L370 340 M370 370 L340 370" stroke="#d5c4a1" stroke-width="2" opacity="0.3" fill="none"/>
+</svg>

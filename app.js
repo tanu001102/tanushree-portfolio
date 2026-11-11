@@ -453,7 +453,58 @@ function initMobileNavClose() {
   });
 }
 
-// --- 11. INITIALIZATION & EVENT LISTENERS ---
+// --- 11. NAV SHADOW ON SCROLL ---
+function initNavShadow() {
+  const nav = document.getElementById('site-nav');
+  if (!nav) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      nav.style.top = '8px';
+    } else {
+      nav.style.top = '18px';
+    }
+  });
+}
+
+// --- 12. CLOSE MOBILE NAV ON OUTSIDE CLICK ---
+function initOutsideNavClose() {
+  document.addEventListener('click', (e) => {
+    const nav = document.getElementById('nav-links');
+    const toggle = document.getElementById('mobile-toggle');
+    const toggleIcon = document.getElementById('mobile-toggle-icon');
+    if (nav && nav.classList.contains('mobile-open')) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('mobile-open');
+        if (toggleIcon) toggleIcon.className = 'fa-solid fa-bars';
+      }
+    }
+  });
+}
+
+// --- 13. STAGGERED REVEAL FOR SKILL CHIPS ---
+function initChipStagger() {
+  const boxes = document.querySelectorAll('.skill-box');
+  boxes.forEach((box, bi) => {
+    const chips = box.querySelectorAll('.skill-chip');
+    chips.forEach((chip, ci) => {
+      chip.style.transitionDelay = `${(bi * 50) + (ci * 30)}ms`;
+    });
+  });
+}
+
+// --- 14. COPY EMAIL SHORTCUT ---
+function initEmailCopy() {
+  const emailVal = document.querySelector('.info-text-group .val a[href^="mailto"]');
+  if (emailVal) {
+    emailVal.title = 'Click to copy email';
+    emailVal.addEventListener('click', (e) => {
+      e.preventDefault();
+      copyToClipboard('tanutanushree967@gmail.com', '✅ Email copied to clipboard!');
+    });
+  }
+}
+
+// --- 15. INITIALIZATION & EVENT LISTENERS ---
 document.addEventListener('DOMContentLoaded', () => {
   initParticleCanvas();
   initTypewriter();
@@ -462,6 +513,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initActiveNav();
   initBackToTop();
   initMobileNavClose();
+  initNavShadow();
+  initOutsideNavClose();
+  initChipStagger();
+  initEmailCopy();
 
   // Filter Projects
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -472,7 +527,6 @@ document.addEventListener('DOMContentLoaded', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
-
       projectCards.forEach(card => {
         if (filter === 'all' || card.dataset.category === filter) {
           card.style.display = 'flex';
@@ -494,37 +548,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Modal Closers
+  // Modal Closers — backdrop click
   document.querySelectorAll('.modal-overlay').forEach(modal => {
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
-      }
+      if (e.target === modal) modal.classList.remove('active');
     });
   });
 
+  // Modal Closers — close button
   document.querySelectorAll('.modal-close-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.closest('.modal-overlay').classList.remove('active');
     });
   });
 
-  // Keyboard shortcut to close modals (Escape key)
+  // Keyboard shortcuts
   document.addEventListener('keydown', (e) => {
+    // Escape — close any open modal
     if (e.key === 'Escape') {
-      document.querySelectorAll('.modal-overlay.active').forEach(modal => {
-        modal.classList.remove('active');
-      });
+      document.querySelectorAll('.modal-overlay.active').forEach(m => m.classList.remove('active'));
+    }
+    // '?' — show terminal keyboard tip
+    if (e.key === '?' && !e.target.closest('input, textarea')) {
+      showToast('💡 Tip: Use the interactive terminal in the Skills section!');
     }
   });
 
-  // Contact form — uses FormSubmit, so native submit works.
-  // Show a toast on successful submission via redirect handling.
+  // Contact form
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', () => {
-      // FormSubmit handles the actual submission; show a local toast too
-      showToast('📨 Submitting your message...');
+      showToast('📨 Submitting your message via FormSubmit...');
     });
   }
+
+  // Smooth hover glow effect on about cards
+  document.querySelectorAll('.about-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(43,37,32,0.9), rgba(34,30,26,0.65))`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.background = '';
+    });
+  });
 });
