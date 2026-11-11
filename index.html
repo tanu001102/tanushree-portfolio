@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tanushree C R // MCA Student | AI/ML & Software Developer</title>
+  <meta name="description" content="Personal portfolio of Tanushree C R, MCA student specializing in Artificial Intelligence, Machine Learning, Data Science and Software Development based in Bengaluru, India.">
+  <meta name="keywords" content="Tanushree C R, MCA Student, AI, ML, Machine Learning, Data Science, Python Developer, Software Developer, Bengaluru">
+  <meta name="author" content="Tanushree C R">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Ambient Lighting Effects -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Ambient Particle Simulation -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ==========================================================================
+       NAVIGATION & HUD CONTROLS
+       ========================================================================== -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="brand-symbol">TC</div>
+        <div class="brand-name">
+          <span class="title">TANUSHREE C R</span>
+          <span class="subtitle">MCA STUDENT // AI & ML DEVELOPER // 開発者</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero" class="nav-link"><span class="kanji">壱</span> Profile</a></li>
+        <li><a href="#about" class="nav-link"><span class="kanji">弐</span> About</a></li>
+        <li><a href="#projects" class="nav-link"><span class="kanji">参</span> Projects</a></li>
+        <li><a href="#arsenal" class="nav-link"><span class="kanji">四</span> Skills</a></li>
+        <li><a href="#experience" class="nav-link"><span class="kanji">五</span> Experience</a></li>
+        <li><a href="#chronicles" class="nav-link"><span class="kanji">六</span> Education</a></li>
+        <li><a href="#contact" class="nav-link"><span class="kanji">七</span> Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- View Resume PDF Trigger -->
+        <button class="btn-icon" onclick="openResumeModal()" title="View & Download Resume PDF">
+          <i class="fa-solid fa-file-pdf"></i>
+        </button>
+
+        <a href="https://linkedin.com/in/tanushree-cr" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn Profile">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="btn-icon nav-mobile-toggle" id="mobile-toggle" onclick="toggleMobileNav()" title="Menu">
+          <i class="fa-solid fa-bars" id="mobile-toggle-icon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO & CHARACTER PROFILE SECTION
+       ========================================================================== -->
+  <main>
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Character Lore Dossier -->
+          <div class="character-dossier manga-panel">
+            <span class="kanji-watermark" style="top: 10px; right: 20px;">開発</span>
+            
+            <div class="dossier-header-bar">
+              <span class="dossier-id">PORTFOLIO // TANUSHREE C R</span>
+              <span class="dossier-badge"><i class="fa-solid fa-brain"></i> MCA STUDENT | AI/ML DEVELOPER</span>
+            </div>
+
+            <h1 class="hero-name">
+              Tanushree C R <span class="jp-name">タヌシュリー</span>
+            </h1>
+
+            <div class="hero-role-typing">
+              <i class="fa-solid fa-terminal" style="color: var(--accent-sand); font-size: 0.95rem;"></i>
+              <span id="typewriter-role">MCA Student</span>
+              <span class="cursor"></span>
+            </div>
+
+            <p class="hero-bio">
+              I am an MCA student specializing in <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong>, and <strong>Data Science</strong>. I have hands-on internship experience in AI application development and data analysis. I enjoy developing <strong>Python-based applications</strong>, working with machine learning models, analyzing data, and building practical technology solutions.
+            </p>
+
+            <!-- Quick Info Pills (No fake percentages) -->
+            <div class="hero-info-grid">
+              <div class="info-pill">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>MCA – AI, ML & Data Science</span>
+              </div>
+              <div class="info-pill">
+                <i class="fa-solid fa-building"></i>
+                <span>S-VYASA University, Bengaluru</span>
+              </div>
+              <div class="info-pill">
+                <i class="fa-solid fa-flask"></i>
+                <span>AI/ML & Data Analytics</span>
+              </div>
+              <div class="info-pill">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Bengaluru, India</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">
+                <i class="fa-solid fa-compass"></i> Explore My Projects
+              </a>
+              <button class="btn-secondary" onclick="openResumeModal()">
+                <i class="fa-solid fa-file-pdf"></i> Download My Resume
+              </button>
+              <a href="#contact" class="btn-secondary">
+                <i class="fa-solid fa-paper-plane"></i> Contact Me
+              </a>
+            </div>
+          </div>
+
+          <!-- Character Visual Portrait Card -->
+          <div class="character-visual-card">
+            <div class="portrait-frame manga-panel">
+              <!-- Profile Image Placeholder -->
+              <div class="portrait-placeholder">
+                <div class="placeholder-avatar">
+                  <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+                <p class="placeholder-text">Profile Image</p>
+              </div>
+              
+              <div class="portrait-overlay-hud">
+                <div class="hud-status-live">
+                  <div class="live-indicator"></div>
+                  <span>STATUS: OPEN TO OPPORTUNITIES</span>
+                </div>
+                <div class="hud-affiliations">
+                  <span class="hud-pill"><i class="fa-solid fa-graduation-cap"></i> MCA '25-'27</span>
+                  <span class="hud-pill"><i class="fa-solid fa-star"></i> BCA CGPA 8.16</span>
+                  <span class="hud-pill"><i class="fa-solid fa-award"></i> PUC 91%</span>
+                  <span class="hud-pill"><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION
+         ========================================================================== -->
+    <section id="about" class="about-section">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span class="dot"></span>
+          <span>ABOUT ME // 自己紹介</span>
+        </div>
+        <h2 class="section-title">About <span>Me</span></h2>
+        <p class="section-desc">
+          Get to know my background, interests, and what drives me as a developer and technologist.
+        </p>
+
+        <div class="about-grid">
+          <div class="about-card manga-panel">
+            <div class="about-card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Academic Journey</h3>
+            <p>I am pursuing a <strong>Master of Computer Applications (MCA)</strong> with a specialization in Artificial Intelligence, Machine Learning, and Data Science at S-VYASA Deemed to be University, Bengaluru.</p>
+          </div>
+
+          <div class="about-card manga-panel">
+            <div class="about-card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Practical Experience</h3>
+            <p>I have developed practical experience through internships in <strong>AI application development</strong> at Mevi Technologies and <strong>data analysis</strong> at Bharat Electronics Limited (BEL).</p>
+          </div>
+
+          <div class="about-card manga-panel">
+            <div class="about-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3>Problem Solver</h3>
+            <p>I am interested in solving real-world problems using <strong>programming</strong>, <strong>machine learning</strong>, <strong>data analysis</strong>, and <strong>software development</strong>.</p>
+          </div>
+
+          <div class="about-card manga-panel">
+            <div class="about-card-icon"><i class="fa-solid fa-gears"></i></div>
+            <h3>Core Strengths</h3>
+            <p>My strengths include <strong>analytical thinking</strong>, <strong>problem-solving</strong>, <strong>debugging</strong>, and <strong>application testing</strong> — skills that help me build reliable software solutions.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS SECTION
+         ========================================================================== -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span class="dot"></span>
+          <span>MY PROJECTS // プロジェクト</span>
+        </div>
+        <h2 class="section-title">Featured <span>Projects</span></h2>
+        <p class="section-desc">
+          Hands-on projects showcasing AI chatbot development, machine learning classification, and practical Python applications.
+        </p>
+
+        <!-- Category Filters -->
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects [2]</button>
+          <button class="filter-btn" data-filter="ai">AI & Chatbot</button>
+          <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        </div>
+
+        <!-- Asymmetric Manga Grid -->
+        <div class="manga-grid">
+          
+          <!-- PROJECT 1: AI-Powered Chatbot (7 Columns) -->
+          <div class="project-card manga-panel col-span-7" data-category="ai" data-project-id="ai-chatbot">
+            <div class="card-visual-wrapper">
+              <div class="project-thumbnail-placeholder">
+                <i class="fa-solid fa-robot"></i>
+                <span>AI Chatbot</span>
+              </div>
+              <span class="manga-badge-tag"><i class="fa-solid fa-brain"></i> GOOGLE GEMINI API INTEGRATION</span>
+            </div>
+            <div class="card-body">
+              <div class="card-category">AI & Conversational Application</div>
+              <h3 class="card-title">
+                AI-Powered Chatbot
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </h3>
+              <p class="card-summary">
+                Developed a conversational AI application using Python and Google Gemini API to generate context-aware responses. Features an interactive Gradio web interface and text-to-speech functionality using gTTS.
+              </p>
+              <div class="card-tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Google Gemini API</span>
+                <span class="tech-badge">Gradio</span>
+                <span class="tech-badge">gTTS</span>
+                <span class="tech-badge">REST APIs</span>
+              </div>
+              <div class="card-actions-row">
+                <span class="card-link-btn"><i class="fa-solid fa-magnifying-glass"></i> View Details</span>
+                <a href="#" class="card-link-btn" onclick="event.stopPropagation(); showToast('GitHub repository URL will be added soon.')">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PROJECT 2: Disease Prediction (5 Columns) -->
+          <div class="project-card manga-panel col-span-5" data-category="ml" data-project-id="disease-prediction">
+            <div class="card-visual-wrapper">
+              <div class="project-thumbnail-placeholder">
+                <i class="fa-solid fa-heartbeat"></i>
+                <span>Disease Prediction</span>
+              </div>
+              <span class="manga-badge-tag"><i class="fa-solid fa-flask"></i> RANDOM FOREST CLASSIFICATION</span>
+            </div>
+            <div class="card-body">
+              <div class="card-category">Machine Learning & Healthcare</div>
+              <h3 class="card-title">
+                Symptom-Based Disease Prediction
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </h3>
+              <p class="card-summary">
+                Developed a machine learning classification application to predict potential diseases based on user-provided symptoms. Uses Random Forest classification with comprehensive data preprocessing.
+              </p>
+              <div class="card-tech-stack">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Scikit-learn</span>
+                <span class="tech-badge">Random Forest</span>
+                <span class="tech-badge">Pandas</span>
+                <span class="tech-badge">NumPy</span>
+              </div>
+              <div class="card-actions-row">
+                <span class="card-link-btn"><i class="fa-solid fa-magnifying-glass"></i> View Details</span>
+                <a href="#" class="card-link-btn" onclick="event.stopPropagation(); showToast('GitHub repository URL will be added soon.')">
+                  <i class="fa-brands fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         TECHNICAL SKILLS & INTERACTIVE TERMINAL SECTION
+         ========================================================================== -->
+    <section id="arsenal" class="arsenal-section">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span class="dot"></span>
+          <span>TECHNICAL MATRIX // スキル</span>
+        </div>
+        <h2 class="section-title">Technical <span>Arsenal</span></h2>
+        <p class="section-desc">
+          Technical competencies across programming, AI/ML, frameworks, databases, and development tools.
+        </p>
+
+        <div class="arsenal-grid">
+          
+          <!-- Category Skills List -->
+          <div class="skills-category-list">
+            
+            <!-- Programming Languages -->
+            <div class="skill-box manga-panel">
+              <div class="skill-box-title">
+                <i class="fa-solid fa-code"></i> Programming Languages
+              </div>
+              <div class="skill-chips">
+                <span class="skill-chip"><i class="fa-brands fa-python"></i> Python</span>
+                <span class="skill-chip"><i class="fa-solid fa-database"></i> SQL</span>
+                <span class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="skill-chip"><i class="fa-brands fa-html5"></i> HTML5</span>
+                <span class="skill-chip"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+              </div>
+            </div>
+
+            <!-- AI/ML & Data Science -->
+            <div class="skill-box manga-panel">
+              <div class="skill-box-title">
+                <i class="fa-solid fa-brain"></i> AI/ML & Data Science
+              </div>
+              <div class="skill-chips">
+                <span class="skill-chip">Scikit-learn</span>
+                <span class="skill-chip">Random Forest</span>
+                <span class="skill-chip">Classification</span>
+                <span class="skill-chip">Model Training</span>
+                <span class="skill-chip">Model Evaluation</span>
+                <span class="skill-chip">Data Cleaning</span>
+                <span class="skill-chip">Data Preprocessing</span>
+                <span class="skill-chip">EDA</span>
+                <span class="skill-chip">Data Visualization</span>
+              </div>
+            </div>
+
+            <!-- Frameworks & Libraries -->
+            <div class="skill-box manga-panel">
+              <div class="skill-box-title">
+                <i class="fa-solid fa-layer-group"></i> Frameworks & Libraries
+              </div>
+              <div class="skill-chips">
+                <span class="skill-chip">Flask</span>
+                <span class="skill-chip">Gradio</span>
+                <span class="skill-chip">REST APIs</span>
+                <span class="skill-chip">Google Gemini API</span>
+                <span class="skill-chip">gTTS</span>
+              </div>
+            </div>
+
+            <!-- Database -->
+            <div class="skill-box manga-panel">
+              <div class="skill-box-title">
+                <i class="fa-solid fa-database"></i> Databases
+              </div>
+              <div class="skill-chips">
+                <span class="skill-chip">MySQL</span>
+                <span class="skill-chip">PostgreSQL</span>
+                <span class="skill-chip">SQL Queries</span>
+              </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="skill-box manga-panel">
+              <div class="skill-box-title">
+                <i class="fa-solid fa-wrench"></i> Development Tools
+              </div>
+              <div class="skill-chips">
+                <span class="skill-chip">Jupyter Notebook</span>
+                <span class="skill-chip">Google Colab</span>
+                <span class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git Fundamentals</span>
+              </div>
+            </div>
+
+            <!-- Core Competencies -->
+            <div class="skill-box manga-panel">
+              <div class="skill-box-title">
+                <i class="fa-solid fa-cubes"></i> Core Competencies
+              </div>
+              <div class="skill-chips">
+                <span class="skill-chip">Programming Fundamentals</span>
+                <span class="skill-chip">Database Fundamentals</span>
+                <span class="skill-chip">Debugging</span>
+                <span class="skill-chip">Troubleshooting</span>
+                <span class="skill-chip">Application Testing</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Terminal -->
+          <div class="terminal-window">
+            <div class="terminal-header">
+              <div class="terminal-dots">
+                <div class="t-dot red"></div>
+                <div class="t-dot yellow"></div>
+                <div class="t-dot green"></div>
+              </div>
+              <div class="terminal-title">tanushree@lofi-sh // terminal-cli</div>
+              <div style="width: 30px;"></div>
+            </div>
+
+            <div class="terminal-body" id="terminal-body">
+              <div class="terminal-line">
+                <span style="color: var(--accent-sand);">[SYSTEM READY]</span> - Welcome to Tanushree's interactive terminal.
+              </div>
+              <div class="terminal-line">
+                Type <span class="highlight">'help'</span> or <span class="highlight">'resume'</span> to explore credentials.
+              </div>
+              <div class="terminal-output">
+tanushree_cr --v2026
+Affiliation : S-VYASA University, Bengaluru (MCA – AI, ML & Data Science)
+Focus       : Python Development, AI/ML, Data Analytics, Software Development.
+              </div>
+            </div>
+
+            <div class="terminal-input-row" style="padding: 12px 18px; background: #141210; border-top: 1px solid var(--border-subtle);">
+              <span class="terminal-prompt">guest@tanushree:~$</span>
+              <input type="text" id="terminal-input" class="terminal-input" placeholder="type 'help', 'projects', 'skills', 'education', 'contact'..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERNSHIP EXPERIENCE SECTION
+         ========================================================================== -->
+    <section id="experience" class="chronicles-section">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span class="dot"></span>
+          <span>INTERNSHIP EXPERIENCE // 経験</span>
+        </div>
+        <h2 class="section-title">Internship <span>Experience</span></h2>
+        <p class="section-desc">
+          Hands-on industry experience in AI application development and data analysis.
+        </p>
+
+        <div class="timeline-flow">
+          
+          <!-- Internship 1: Mevi Technologies -->
+          <div class="timeline-item">
+            <div class="timeline-node glow-node"></div>
+            <div class="timeline-card manga-panel">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> FEBRUARY 2025</div>
+              <h3 class="timeline-role">AI / Software Development Intern</h3>
+              <div class="timeline-org">Mevi Technologies</div>
+              <div class="timeline-details">
+                <ul class="timeline-list">
+                  <li>Developed a Python-based AI chatbot using the Google Gemini API to generate context-aware conversational responses.</li>
+                  <li>Integrated API calls with application logic to support interactive user requests and response generation.</li>
+                  <li>Built an interactive application interface using Gradio.</li>
+                  <li>Implemented text-to-speech functionality using gTTS.</li>
+                  <li>Tested application functionality, identified issues, and refined user interaction workflows.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internship 2: BEL -->
+          <div class="timeline-item">
+            <div class="timeline-node glow-node"></div>
+            <div class="timeline-card manga-panel">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> DECEMBER 2024</div>
+              <h3 class="timeline-role">Data Analysis Intern</h3>
+              <div class="timeline-org">Bharat Electronics Limited (BEL)</div>
+              <div class="timeline-details">
+                <ul class="timeline-list">
+                  <li>Analyzed datasets using Python to identify patterns and generate actionable insights.</li>
+                  <li>Performed data cleaning, preprocessing, and exploratory data analysis.</li>
+                  <li>Conducted data validation and quality checks to improve data consistency and reliability.</li>
+                  <li>Created data visualizations and communicated findings to support data-driven decision-making.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION, CERTIFICATIONS & LANGUAGES TIMELINE
+         ========================================================================== -->
+    <section id="chronicles" class="chronicles-section">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span class="dot"></span>
+          <span>ACADEMIC TIMELINE // 経歴</span>
+        </div>
+        <h2 class="section-title">Education & <span>Certifications</span></h2>
+        <p class="section-desc">
+          Academic credentials, verified certifications, and language proficiencies.
+        </p>
+
+        <div class="timeline-flow">
+          
+          <!-- MCA -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card manga-panel">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2025 — 2027</div>
+              <h3 class="timeline-role">Master of Computer Applications (MCA)</h3>
+              <div class="timeline-org">S-VYASA Deemed to be University • Bengaluru</div>
+              <p class="timeline-details">
+                Specialization: <strong>Artificial Intelligence, Machine Learning & Data Science</strong>.<br>
+                Currently pursuing advanced studies in AI/ML, data analytics, and software development.
+              </p>
+            </div>
+          </div>
+
+          <!-- BCA -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card manga-panel">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2022 — 2025</div>
+              <h3 class="timeline-role">Bachelor of Computer Applications (BCA)</h3>
+              <div class="timeline-org">RNS First Grade College • Bengaluru</div>
+              <p class="timeline-details">
+                Completed undergraduate degree in Computer Applications with strong academic performance: <strong>CGPA: 8.16 / 10</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- PUC -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card manga-panel">
+              <div class="timeline-date"><i class="fa-regular fa-calendar"></i> 2020 — 2022</div>
+              <h3 class="timeline-role">Pre-University Course (PUC)</h3>
+              <div class="timeline-org">Mahesh PU College • Bengaluru</div>
+              <p class="timeline-details">
+                Completed Pre-University education with excellent academic distinction: <strong>Percentage: 91%</strong>.
+              </p>
+            </div>
+          </div>
+
+          <!-- Certifications -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card manga-panel">
+              <div class="timeline-date"><i class="fa-solid fa-award"></i> VERIFIED CERTIFICATIONS</div>
+              <h3 class="timeline-role">Certifications</h3>
+              <div class="timeline-org">Industry & Academic Institutions</div>
+              <div class="certifications-grid">
+                <div class="cert-card">
+                  <i class="fa-solid fa-certificate"></i>
+                  <div>
+                    <strong>Data Analytics</strong>
+                    <span>Agastya Academy</span>
+                  </div>
+                </div>
+                <div class="cert-card">
+                  <i class="fa-solid fa-certificate"></i>
+                  <div>
+                    <strong>Python for Data Science</strong>
+                    <span>Mevi Technologies</span>
+                  </div>
+                </div>
+                <div class="cert-card">
+                  <i class="fa-solid fa-certificate"></i>
+                  <div>
+                    <strong>Disease Prediction using ML</strong>
+                    <span>Bharat Electronics Limited (BEL)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="timeline-item">
+            <div class="timeline-node"></div>
+            <div class="timeline-card manga-panel">
+              <div class="timeline-date"><i class="fa-solid fa-earth-asia"></i> COMMUNICATION & LOCALIZATION</div>
+              <h3 class="timeline-role">Languages</h3>
+              <div class="timeline-org">Spoken Language Proficiencies</div>
+              <div class="skill-chips" style="margin-top: 12px;">
+                <span class="skill-chip"><i class="fa-solid fa-globe"></i> English (Professional Working Proficiency)</span>
+                <span class="skill-chip"><i class="fa-solid fa-heart"></i> Kannada (Native)</span>
+                <span class="skill-chip"><i class="fa-solid fa-comments"></i> Hindi (Working Proficiency)</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section id="contact" class="transmissions-section">
+      <div class="container">
+        
+        <div class="section-tag">
+          <span class="dot"></span>
+          <span>GET IN TOUCH // 交信</span>
+        </div>
+        <h2 class="section-title">Let's <span>Connect</span></h2>
+        <p class="section-desc">
+          Feel free to reach out for software development, AI/ML opportunities, internships, or collaborations.
+        </p>
+
+        <div class="contact-grid">
+          
+          <!-- Contact Coordinates -->
+          <div class="contact-info-card manga-panel">
+            <div>
+              <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--text-bright); margin-bottom: 8px;">Contact Information</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">Looking forward to connecting with recruiters, engineers, and fellow developers.</p>
+
+              <div class="info-item-list">
+                <div class="info-item">
+                  <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div class="info-text-group">
+                    <span class="label">Email</span>
+                    <div class="val"><a href="mailto:tanutanushree967@gmail.com">tanutanushree967@gmail.com</a></div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div class="info-text-group">
+                    <span class="label">Phone</span>
+                    <div class="val">+91 9513870072</div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+                  <div class="info-text-group">
+                    <span class="label">LinkedIn</span>
+                    <div class="val"><a href="https://linkedin.com/in/tanushree-cr" target="_blank" rel="noopener noreferrer">linkedin.com/in/tanushree-cr</a></div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+                  <div class="info-text-group">
+                    <span class="label">GitHub</span>
+                    <div class="val"><a href="#" onclick="showToast('GitHub profile URL will be added soon.'); return false;">github.com/tanushree-cr</a></div>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                  <div class="info-text-group">
+                    <span class="label">Location</span>
+                    <div class="val">Bengaluru, India</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-btn-group">
+              <a href="mailto:tanutanushree967@gmail.com" class="btn-primary" style="width: 100%;">
+                <i class="fa-solid fa-envelope"></i> Send Email
+              </a>
+              <a href="https://linkedin.com/in/tanushree-cr" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: 100%;">
+                <i class="fa-brands fa-linkedin-in"></i> Connect on LinkedIn
+              </a>
+              <button class="btn-secondary" style="width: 100%;" onclick="showToast('GitHub profile URL will be added soon.')">
+                <i class="fa-brands fa-github"></i> GitHub Profile
+              </button>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-card manga-panel">
+            <h3 style="font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 20px; color: var(--text-bright);">Send a Message</h3>
+            
+            <form id="contact-form" action="https://formsubmit.co/tanutanushree967@gmail.com" method="POST">
+              <!-- FormSubmit Config -->
+              <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="text" name="_honey" style="display:none">
+
+              <div class="form-group">
+                <label class="form-label" for="c-name"><i class="fa-regular fa-user"></i> YOUR NAME</label>
+                <input type="text" id="c-name" name="name" class="form-input" placeholder="Your Name" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-email"><i class="fa-regular fa-envelope"></i> YOUR EMAIL</label>
+                <input type="email" id="c-email" name="email" class="form-input" placeholder="your.email@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="c-message"><i class="fa-regular fa-message"></i> MESSAGE</label>
+                <textarea id="c-message" name="message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary" style="width: 100%;">
+                <i class="fa-solid fa-paper-plane"></i> Send Message
+              </button>
+              <p class="form-note">
+                <i class="fa-solid fa-circle-info"></i> Messages are sent via FormSubmit. No backend required.
+              </p>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">TANUSHREE C R // 開発者</div>
+      <p class="footer-tagline">"Building meaningful solutions through code, data, and artificial intelligence."</p>
+      
+      <div class="footer-socials">
+        <a href="#" onclick="showToast('GitHub profile URL will be added soon.'); return false;" class="social-icon-btn" title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/tanushree-cr" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:tanutanushree967@gmail.com" class="social-icon-btn" title="Email Direct">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </div>
+
+      <div class="footer-copy">© 2026 Tanushree C R. All rights reserved. Crafted with ☕ and code.</div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       PROJECT DEEP-DIVE MODAL
+       ========================================================================== -->
+  <div id="project-modal" class="modal-overlay">
+    <div class="modal-window">
+      <button class="modal-close-btn" onclick="closeProjectModal()"><i class="fa-solid fa-xmark"></i></button>
+      
+      <div style="height: 200px; overflow: hidden; background: #141210; display: flex; align-items: center; justify-content: center;">
+        <div id="modal-img-placeholder" style="font-size: 4rem; color: var(--accent-sand);"></div>
+      </div>
+
+      <div class="modal-content">
+        <div id="modal-category" style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent-sand); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;"></div>
+        <h2 id="modal-title" style="font-size: 1.6rem; font-family: var(--font-heading); color: var(--text-bright); margin-bottom: 14px;"></h2>
+        <p id="modal-summary" style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.7; margin-bottom: 24px;"></p>
+
+        <h4 style="font-family: var(--font-heading); font-size: 1.02rem; color: var(--accent-cream); margin-bottom: 12px;">Key Features & Architecture:</h4>
+        <ul id="modal-architecture" style="list-style: square; padding-left: 20px; color: var(--text-main); font-size: 0.92rem; margin-bottom: 24px;"></ul>
+
+        <h4 style="font-family: var(--font-heading); font-size: 1.02rem; color: var(--accent-cream); margin-bottom: 12px;">Tech Stack:</h4>
+        <div id="modal-stack" class="card-tech-stack" style="margin-bottom: 28px;"></div>
+
+        <div style="display: flex; gap: 14px;">
+          <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            <i class="fa-brands fa-github"></i> View GitHub Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       RESUME PDF MODAL & EMBEDDED VIEWER
+       ========================================================================== -->
+  <div id="resume-modal" class="modal-overlay">
+    <div class="modal-window" style="max-width: 920px; max-height: 94vh;">
+      <button class="modal-close-btn" onclick="closeResumeModal()"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="modal-content" style="padding: 28px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+          <div>
+            <h2 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--text-bright);">Tanushree C R // Resume</h2>
+            <p style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent-sand);">MCA Student • AI/ML & Data Science • S-VYASA University</p>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <a href="assets/Tanushree_CR_Resume.pdf" target="_blank" class="btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Tab
+            </a>
+            <a href="assets/Tanushree_CR_Resume.pdf" download="Tanushree_CR_Resume.pdf" class="btn-primary" style="padding: 8px 18px; font-size: 0.85rem;">
+              <i class="fa-solid fa-download"></i> Download PDF
+            </a>
+          </div>
+        </div>
+
+        <!-- Embedded PDF Frame -->
+        <div style="width: 100%; height: 580px; border-radius: 8px; overflow: hidden; border: 1px solid var(--border-manga); background: #141210;">
+          <iframe src="assets/Tanushree_CR_Resume.pdf#view=FitH" width="100%" height="100%" style="border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top-btn" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Back to Top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-msg">
+    <i class="fa-solid fa-circle-check" style="color: var(--accent-sand);"></i>
+    <span class="toast-text">Notification</span>
+  </div>
+
+  <!-- Main Engine Script -->
+  <script src="app.js"></script>
+</body>
+</html>
