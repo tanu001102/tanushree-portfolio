@@ -1774,15 +1774,24 @@ a:hover {
    ADDITIONAL POLISH & FINAL TWEAKS
    ========================================================================== */
 
-/* Portrait image with SVG avatar */
+/* Portrait image — anime girl photo */
 .portrait-frame .portrait-img {
   width: 100%;
   height: auto;
-  min-height: 320px;
+  min-height: 420px;
+  max-height: 580px;
   object-fit: cover;
+  object-position: top center;
   display: block;
   transition: transform var(--transition-smooth);
   background: var(--bg-surface);
+}
+
+/* Avatar inline wrapper for real photo */
+.avatar-inline {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .portrait-frame:hover .portrait-img {
